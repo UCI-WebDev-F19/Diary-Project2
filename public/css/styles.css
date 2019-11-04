@@ -1,0 +1,48 @@
+button.submit {
+    float: right;
+  }
+  
+  form#cms {
+    margin-top: 50px;
+  }
+  
+  #cms textarea {
+    resize: none;
+  }
+  
+  .card-header button.delete,
+  button.edit {
+    float: right;
+    margin: 5px;
+  }
+  
+  .card-header {
+    background-color: #bcdcf2;
+  }
+  
+  body {
+    background-color: lightgray;
+  }
+  
+  
+  .jumbotron {
+    background-color: gray;
+    text-align: center;
+    display: inline-block;
+    margin: 0 auto;
+    width: 100%;
+    background-image: url("jumbotron-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  
+  .custom-select {
+    width: fit-content;
+  }
+  
+/* .avatar {
+    vertical-align: middle;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}   */
