@@ -78,7 +78,7 @@ $(document).ready(function() {
       newPostTitle.text(post.title + " ");
       newPostBody.text(post.body);
       var formattedDate = new Date(post.createdAt);
-      formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
+      formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm a");
       newPostDate.text(formattedDate);
       newPostTitle.append(newPostDate);
       newPostCardHeading.append(deleteBtn);
