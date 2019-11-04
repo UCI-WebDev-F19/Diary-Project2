@@ -24,9 +24,6 @@
           <li class="nav-item active">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -62,16 +59,7 @@
             <p>Location: Washington, DC, USA </p>
             <p><a href="https://www.whitehouse.gov/about-the-white-house/presidents/abraham-lincoln/">www.whitehouse.gov/lincoln</a></p>
           </p>
-          <form class="form-inline">
-            <div class="form-group">
-              <select class="custom-select" id="category">
-                <option selected value="">Browse Topics...</option>
-                <option value="Personal">Personal</option>
-                <option value="Product Review">Product Review</option>
-                <option value="Political">Political</option>
-              </select>
-            </div>
-          </form>
+          
         </div>
       </div>
     </div>
@@ -79,13 +67,22 @@
     <div class="col-sm-6">
       <div class="blog-container"></div>
     </div>
-    <!-- Additional info, like "You may also like..." -->
+    <!-- Filter by category -->
     <div class="col-sm-3">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">You may also like...</h5>
+          <h5 class="card-title">What posts do you want to see?</h5>
           <p class="card-text">
-            
+              <form class="form-inline">
+                  <div class="form-group">
+                    <select class="custom-select" id="category">
+                      <option selected value="">Browse Topics...</option>
+                      <option value="Personal">Personal</option>
+                      <option value="Product Review">Product Review</option>
+                      <option value="Political">Political</option>
+                    </select>
+                  </div>
+                </form>
           </p>
           
         </div>
