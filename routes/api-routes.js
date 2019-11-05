@@ -17,6 +17,9 @@ module.exports = function(app) {
     }).then(posts => res.json(posts));
   });
 
+// GET ROUTE FOR DATE
+  app.get("api/posts/date/:date")
+
 //  GET ONLY ((SINGLE POST BY ID))
   app.get("/api/posts/:id", function(req, res) {
     db.Post.singlePost({
@@ -44,26 +47,3 @@ module.exports = function(app) {
   });
 };
 
-// --------------------------------------------------------------
-// GIPHY API
-// --------------------------------------------------------------
-$('#giphy').on('click', function () {
-    event.preventDefault()
-  var settings = {
-      "async": true,
-      "crossDomain": true,
-    "url": "https://giphy.p.rapidapi.com/v1/gifs/translate?" 
-    + "rating=" + "pg"
-    + "&s=" + $('#how-feel').val() + "&api_key=dc6zaTOxFJmzC",
-      "method": "GET",
-      "headers": {
-          "x-rapidapi-host": "giphy.p.rapidapi.com",
-          "x-rapidapi-key": "b30834a494msh1bea8fbe543d693p1b3792jsnd8e0f7019e3a"
-      }
-  }
-  console.log(settings)
-  $.ajax(settings).done(function (response) {
-    var response= response.data.images.original.url
-    console.log(response);
-    $('#giphyResponse').append("<img src='"+ response + "'/> " )
-  })})

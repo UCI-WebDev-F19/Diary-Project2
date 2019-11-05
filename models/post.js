@@ -1,12 +1,12 @@
 module.exports = function(sequelize, DataTypes) {
     var Post = sequelize.define("Post", {
-      Date: {
-        type: DataTypes.DATE,
+      subject: {
+        type: DataTypes.STRING,
         allowNull: false,
       },
       category: {
         type: DataTypes.STRING,
-        defaultValue: "Personal"
+        defaultValue: "Love"
       },
       body: {
         type: DataTypes.TEXT,

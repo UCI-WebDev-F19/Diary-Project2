@@ -3,10 +3,9 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Blog - Express</title>
-  <!-- Latest compiled and minified CSS & JS -->
+  <title>Complaints</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="public/css/styles.css" media="screen" title="no title">
+  <link rel="stylesheet" href="/css/styles.css" media="screen" title="no title">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
@@ -19,28 +18,18 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand" href="#">Hidden brand</a>
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <a class="navbar-brand" href="#">Firstname Lastname</a>
       </div>
     </nav>
   </header>
 
   <div class="jumbotron jumbotron-fluid">
-    <h1 class="display-4">Twitter Ripoff</h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
-      featured content or information.</p>
+    <h1 class="display-4">Complaint Box</h1>
+    <p id="instructions" class="lead">Whether you just stepped in gum or your roommate crashed your car, we've all got something to complain about. Unburden yourself here, or simply zoom out and recall your past problems to gain perspective.</p>
     <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <p>Vent all you want; everything in your profile is private.</p>
     <p class="lead">
-      <a class="btn btn-danger" href="/cms">Write a New Post</a>
+      <a class="btn btn-danger" href="/cms">Write a New Entry</a>
     </p>
   </div>
 
@@ -51,13 +40,12 @@
     <div class="col-sm-3">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title"><strong>Abraham Lincoln <br> </strong> @potus </h5>
+          <h5 class="card-title"><strong>User Name <br> </strong> @username </h5>
           <img src="public/css/lincoln-avatar.jpg" alt="Avatar" class="avatar">
           <p class="card-text">
-            <p> 16th President of the United States </p>
-            <p>I enjoy defeating rebels, combing my beard, and attending plays. </p>
-            <p>Location: Washington, DC, USA </p>
-            <p><a href="https://www.whitehouse.gov/about-the-white-house/presidents/abraham-lincoln/">www.whitehouse.gov/lincoln</a></p>
+            <p>Last Post: 10/28/19 </p>
+            <p>Category: Trump </p>
+            <p>username@hotmail.com</p>
           </p>
           
         </div>
@@ -71,15 +59,18 @@
     <div class="col-sm-3">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">What posts do you want to see?</h5>
+          <h5 class="card-title">Search your past posts by category: </h5>
           <p class="card-text">
               <form class="form-inline">
                   <div class="form-group">
                     <select class="custom-select" id="category">
-                      <option selected value="">Browse Topics...</option>
-                      <option value="Personal">Personal</option>
-                      <option value="Product Review">Product Review</option>
-                      <option value="Political">Political</option>
+                      <option selected value="">Categories...</option>
+                      <option value="Work">Work</option>
+                      <option value="Neighbors">Neighbors</option>
+                      <option value="People These Days">People These Days</option>
+                      <option value="Trump">Trump</option>
+                      <option value="Love">Love</option>
+                      <option value="Family">Family</option>
                     </select>
                   </div>
                 </form>
