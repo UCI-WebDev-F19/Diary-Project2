@@ -3,10 +3,9 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>New Post</title>
-  <!-- Latest compiled and minified CSS & JS -->
+  <title>New Complaint</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="public/css/styles.css" media="screen" title="no title">
+  <link rel="stylesheet" href="/css/styles.css" media="screen" title="no title">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
@@ -19,19 +18,12 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a class="navbar-brand" href="blog.html">Hidden brand</a>
+            <a class="navbar-brand" href="blog.html">Firstname Lastname</a>
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
               <li class="nav-item active">
-                <a class="nav-link" href="blog.html">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="blog.html">Back to Home <span class="sr-only">(current)</span></a>
               </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
           </div>
         </nav>
       </header>
@@ -40,20 +32,28 @@
       <div class="col-md-6 offset-md-3">
         <form id="cms">
           <div class="form-group">
-            <label for="title">Title:</label>
-            <input type="text" class="form-control" id="title">
+            <label for="subject">Subject:</label>
+            <input type="text" class="form-control" id="subject">
             <br />
             <label for="body">Body:</label>
             <textarea class="form-control" rows="10" id="body" placeholder="What's on your mind?"></textarea>
             <br>
             <div class="form-group">
-              <label for="category">Select Category:</label>
+              <label for="category">Select Category of Complaint:</label>
               <select class="custom-select" id="category">
-                <option value="Category 1">Category 1</option>
-                <option value="Category 2">Category 2</option>
-                <option value="Category 3">Category 3</option>
-                <option value="Category 4">Category 4</option>
-                <option value="Category 5">Category 5</option>
+                  <option placeholder="">ex. Work</option>
+                      <option value="Work">Work</option>
+                      <option value="Neighbors">Neighbors</option>
+                      <option value="People These Days">People These Days</option>
+                      <option value="Trump">Trump</option>
+                      <option value="Love">Love</option>
+                      <option value="Family">Family</option>
+              <div class="form-group">
+                <label for="giphy-form">In a word, how did that make you feel?</label>
+                <input placeholder="In a word, how did that make you feel?"type="text" class="form-control" id="giphyText">
+                <input id= "giphyClick"type='submit' value="Get Sympathy"></button>
+                <div id="response"></div>
+                <br/>
               </select>
             </div>
             <br />

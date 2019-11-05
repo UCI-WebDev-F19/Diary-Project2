@@ -1,14 +1,14 @@
 $(document).ready(function() {
-    // blogContainer holds all of our posts
+    // POSTS GO HERE
     var blogContainer = $(".blog-container");
     var postCategorySelect = $("#category");
-    // Click events for the edit and delete buttons
+    
     $(document).on("click", "button.delete", handlePostDelete);
     $(document).on("click", "button.edit", handlePostEdit);
     postCategorySelect.on("change", handleCategoryChange);
     var posts;
   
-    // This function grabs posts from the database and updates the view
+   // GET ALL POSTS
     function getPosts(category) {
       var categoryString = category || "";
       if (categoryString) {
@@ -26,7 +26,7 @@ $(document).ready(function() {
       });
     }
   
-    // This function does an API call to delete posts
+// DELETE POSTS
     function deletePost(id) {
       $.ajax({
         method: "DELETE",
@@ -37,10 +37,9 @@ $(document).ready(function() {
         });
     }
   
-    // Getting the initial list of posts
+    
     getPosts();
-    // InitializeRows handles appending all of our constructed post HTML inside
-    // blogContainer
+    // APPEND HTML INSIDE BLOGCONTAINER
     function initializeRows() {
       blogContainer.empty();
       var postsToAdd = [];
@@ -50,19 +49,22 @@ $(document).ready(function() {
       blogContainer.append(postsToAdd);
     }
   
-    // This function constructs a post's HTML
+  // HTML THAT BUILDS A NEW POST
     function createNewRow(post) {
       var newPostCard = $("<div>");
       newPostCard.addClass("card");
       var newPostCardHeading = $("<div>");
       newPostCardHeading.addClass("card-header");
+      //DELETE BUTTON
       var deleteBtn = $("<button>");
       deleteBtn.text("x");
       deleteBtn.addClass("delete btn btn-danger");
+      //EDIT BUTTON
       var editBtn = $("<button>");
       editBtn.text("EDIT");
       editBtn.addClass("edit btn btn-default");
-      var newPostTitle = $("<h2>");
+    
+      var newPostDate = $("<h2>");
       var newPostDate = $("<small>");
       var newPostCategory = $("<h5>");
       newPostCategory.text(post.category);
@@ -75,15 +77,15 @@ $(document).ready(function() {
       var newPostCardBody = $("<div>");
       newPostCardBody.addClass("card-body");
       var newPostBody = $("<p>");
-      newPostTitle.text(post.title + " ");
+      newPostDate.text(post.title + " ");
       newPostBody.text(post.body);
       var formattedDate = new Date(post.createdAt);
       formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm a");
       newPostDate.text(formattedDate);
-      newPostTitle.append(newPostDate);
+      newPostDate.append(newPostDate);
       newPostCardHeading.append(deleteBtn);
       newPostCardHeading.append(editBtn);
-      newPostCardHeading.append(newPostTitle);
+      newPostCardHeading.append(newPostDate);
       newPostCardHeading.append(newPostCategory);
       newPostCardBody.append(newPostBody);
       newPostCard.append(newPostCardHeading);
@@ -92,8 +94,7 @@ $(document).ready(function() {
       return newPostCard;
     }
   
-    // This function figures out which post we want to delete and then calls
-    // deletePost
+    // FIND POST AND DELETE IT
     function handlePostDelete() {
       var currentPost = $(this)
         .parent()
@@ -102,8 +103,7 @@ $(document).ready(function() {
       deletePost(currentPost.id);
     }
   
-    // This function figures out which post we want to edit and takes it to the
-    // Appropriate url
+    // GO TO A POST TO EDIT IT
     function handlePostEdit() {
       var currentPost = $(this)
         .parent()
@@ -112,7 +112,7 @@ $(document).ready(function() {
       window.location.href = "/cms?post_id=" + currentPost.id;
     }
   
-    // This function displays a message when there are no posts
+//  NO POSTS FOUND
     function displayEmpty() {
       blogContainer.empty();
       var messageH2 = $("<h2>");
@@ -121,11 +121,14 @@ $(document).ready(function() {
       blogContainer.append(messageH2);
     }
   
-    // This function handles reloading new posts when the category changes
+// CHANGE CATEGORY
     function handleCategoryChange() {
       var newPostCategory = $(this).val();
       getPosts(newPostCategory);
     }
   
   });
+
+// --------------------------------------------------------------
+
   
